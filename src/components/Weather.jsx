@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { kelvinToCelsius, kelvinToFahrenheit } from "../utils/temp";
+
 const Weather = ({ weatherInfo }) => {
  
 const [isCelsius, setIsCelsius] = useState(true)
@@ -10,7 +11,8 @@ const handleChangeTemp=() => {
 
   return (
     <section className="text-center grid gap-6 p-4 text-black">
-   
+       <i className='bx bxs-sun width: 60px height: 60px' ></i>
+    <i className='bx bxs-moon'></i>
     <p className="font-extrabold text-2xl">
       {weatherInfo?.name}, {weatherInfo?.sys.country}
     </p>
