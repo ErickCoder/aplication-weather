@@ -30,10 +30,13 @@ const handleChangeTemp=() => {
     
     <section className="text-center grid gap-6 p-4 text-black">
      <div className="flex justify-center">
-     <input placeholder="Search City..." type="text" className="placeholder-slate-400 bg-white text-black shadow-md shadow-slate-700 font-medium px-3 py-2 no rounded-l-lg outline-none " />
+     <input placeholder="Search City..." type="text" className="placeholder-[#ccb3fa] bg-white dark:text-white text-black shadow-md shadow-slate-700 font-medium px-3 py-2 no rounded-l-lg outline-none dark:bg-[#571dc2] sm:w-80" />
 
-     <button className="bg-[#571dc2] rounded-r-lg w-10 shadow-md shadow-slate-700">
-     <i className='bx bx-search-alt-2 text-white'></i>
+     <button className="bg-[#571dc2] dark:bg-white rounded-r-lg w-10 shadow-md shadow-slate-700 font-extrabold">
+     {
+     !isDark ? <i className='bx bx-search-alt-2 text-white'></i> : <i className='bx bx-search-alt-2 text-[#571dc2] dark:font-extrabold'></i>
+     }
+   
      </button>
       
      </div>
@@ -112,8 +115,12 @@ const handleChangeTemp=() => {
       </section>
     </section>
 
-    
-    <button onClick={handleChangeTemp} className="bg-white font-semibold hover:text-white hover:bg-[#571dc2] transition-colors  rounded-3xl overflow-hidden p-3 w-134px h-30 text-[#4580BA] dark:bg-[#571dc2] dark:text-white dark:hover:bg-white dark:hover:text-[#4580BA] dark:font-semibold" >Change F/C</button>
+    <div>
+
+
+
+    </div>
+    <button onClick={handleChangeTemp} className="bg-white font-semibold hover:text-white hover:bg-[#571dc2] transition-colors  rounded-3xl overflow-hidden p-3 w-134px h-30 text-[#571dc2] dark:bg-[#571dc2] dark:text-white dark:hover:bg-white dark:hover:text-[#571dc2] dark:font-semibold sm:w-52 place-self-center w-44 " >Change F/C</button>
 
 </section>
 
