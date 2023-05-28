@@ -38,7 +38,10 @@ function App() {
       if (data.weather[0].main === 'Mist'){
         newData.weatherImage = 'bg-Niebla'
         }
-        console.log(newData);
+        if(data.weather[0].main === 'Fog'){
+          newData.weatherImage = 'bg-Niebla'
+        }
+        
       setWeatherInfo(newData)
       return newData;
     })
