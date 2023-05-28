@@ -29,10 +29,10 @@ const handleChangeTemp=() => {
   return (
     <section className="text-center grid gap-6 p-4 text-black">
      
-     <button onClick={handleTheme} className="mx-auto block mb-4 text-2xl hover:text-violet-500 transition-colors ">
+     <button onClick={handleTheme} className="mx-auto block mb-4 text-2xl bg-[#ffffff1a] rounded-md hover:text-violet-900 transition-colors backdrop-opacity-10 ">
 
        {
-       isDark ? <i className='bx bxs-sun' ></i> :  <i className='bx bxs-moon'></i>
+       isDark ? <i className='bx bxs-sun' ></i> :  <i className='bx bxs-moon hover:drop-shadow-xl shadow-slate-100'></i>
        }
      </button>
 
