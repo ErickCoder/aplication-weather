@@ -26,7 +26,7 @@ function App() {
 
   return (
     
-    <main className="bg-tormenta bg-no-repeat min-h-screen bg-cover text-white flex justify-center items-center font-principal-font">
+    <main className="bg-tormenta bg-no-repeat min-h-screen bg-cover text-white flex justify-center items-center font-principal-font ">
    {/*  <Loader/> */}
 
 
