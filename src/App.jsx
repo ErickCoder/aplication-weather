@@ -16,7 +16,34 @@ function App() {
 
     axios
       .get(URL)
-      .then(({ data }) => setWeatherInfo(data))
+      .then(({ data }) =>{
+
+      let newData = data;
+      newData.weatherImage = '';
+      if (data.weather[0].main === 'Clear'){
+        newData.weatherImage = 'bg-Soleado'
+      }
+      if (data.weather[0].main === 'Drizzle'){
+        newData.weatherImage = 'bg-Lluvia'
+        }
+      if (data.weather[0].main === 'Clouds'){
+        newData.weatherImage = 'bg-Pocas_Nubes'
+        }
+      if (data.weather[0].main === 'Snow'){
+        newData.weatherImage = 'bg-Nieve'
+        }
+      if (data.weather[0].main === 'Thunderstorm'){
+        newData.weatherImage = 'bg-Tormenta_electrica'
+        }
+      if (data.weather[0].main === 'Mist'){
+        newData.weatherImage = 'bg-Niebla'
+        }
+        console.log(newData);
+      setWeatherInfo(newData)
+      return newData;
+    })
+
+
       .catch((err) => console.log(err))
   }
 
@@ -26,7 +53,7 @@ function App() {
 
   return (
     
-    <main className="bg-tormenta bg-no-repeat min-h-screen bg-cover text-white flex justify-center items-center font-principal-font ">
+    <main  className={`${weatherInfo?.weatherImage || ""} bg-center bg-no-repeat min-h-screen bg-cover text-white flex justify-center items-center font-principal-font `} >
    {/*  <Loader/> */}
 
 
