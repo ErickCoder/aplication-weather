@@ -29,8 +29,15 @@ const handleChangeTemp=() => {
   return (
     
     <section className="text-center grid gap-6 p-4 text-black">
-     
-     <input placeholder="Search City..." type="text" className="placeholder-slate-400 bg-white text-black shadow-md shadow-slate-700 font-medium px-3 py-2 no rounded-xl outline-none " />
+     <div className="flex justify-center">
+     <input placeholder="Search City..." type="text" className="placeholder-slate-400 bg-white text-black shadow-md shadow-slate-700 font-medium px-3 py-2 no rounded-l-lg outline-none " />
+
+     <button className="bg-[#571dc2] rounded-r-lg w-10 shadow-md shadow-slate-700">
+     <i className='bx bx-search-alt-2 text-white'></i>
+     </button>
+      
+     </div>
+  
      
      <button onClick={handleTheme} className="mx-auto block mb-4 text-2xl bg-[#ffffff1a] rounded-md hover:text-violet-900 transition-colors backdrop-opacity-10 ">
 
