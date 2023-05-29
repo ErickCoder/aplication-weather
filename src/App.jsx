@@ -71,7 +71,7 @@ function App() {
           }
 
           if (data.weather[0].icon === '50d'){
-            newData.weatherImage = 'bg-niebla'
+            newData.weatherImage = 'bg-Niebla'
             }
             
             if(data.weather[0].description === 'light rain'){
