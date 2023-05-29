@@ -7,14 +7,36 @@ import Loader from './components/Loader'
 function App() {
   const [weatherInfo, setWeatherInfo] = useState(null)
 
+
+  
+  const handleSubmit=(e) => {
+    e.preventDefault()
+    const city= e.target.city.value
+    const API_KEY = '44f1f57375cf9c084dc69a88bc046a61'
+
+    const URL_COUNTRY = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${KEY}`
+
+
+
+    axios.get(URL_COUNTRY)
+    .then(({data})=> setWeatherInfo(data))
+    .catch((error) => console.log(error))
+  }
+
+
+
+
+
+
   const success = (pos) => {
     const lat = pos.coords.latitude
     const lon = pos.coords.longitude
     const API_KEY = '44f1f57375cf9c084dc69a88bc046a61'
 
     const URL = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}`
-
-    axios
+  
+    
+     axios
       .get(URL)
       .then(({ data }) =>{
 
@@ -24,7 +46,7 @@ function App() {
         newData.weatherImage = 'bg-Soleado'
       }
       if (data.weather[0].main === 'Drizzle'){
-        newData.weatherImage = 'bg-Lluvia'
+        newData.weatherImage = 'bg-Aguacero'
         }
       if (data.weather[0].main === 'Clouds'){
         newData.weatherImage = 'bg-Pocas_Nubes'
@@ -41,7 +63,7 @@ function App() {
         if(data.weather[0].main === 'Fog'){
           newData.weatherImage = 'bg-Niebla'
         }
-        
+       
       setWeatherInfo(newData)
       return newData;
     })
@@ -49,6 +71,7 @@ function App() {
 
       .catch((err) => console.log(err))
   }
+
 
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(success)
