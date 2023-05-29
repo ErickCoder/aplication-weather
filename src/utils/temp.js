@@ -1,6 +1,6 @@
 
 export const kelvinToCelsius = (tempK)=>{
-    return `${(tempK - 273.15).toFixed(1)}°C`
+    return `${(tempK - 273.15).toFixed(1)} °C`
 
 }
 

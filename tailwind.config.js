@@ -14,6 +14,7 @@ export default {
           'Nieve': "url('/images_clima/Nieve.jpg')",
           'Mayormente_Nublado': "url('/images_clima/Mayormente_nublado.jpg')",
           'Probablemente_Nublado': "url('/images_clima/Probablemente_nublado.jpg')",
+          'Noche': "url('/images_clima/noche.jpg')",
         },
         fontFamily:{
           "principal-font": ["Lato","sans"]

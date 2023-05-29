@@ -1,7 +1,30 @@
 import { useEffect, useState } from "react";
 import { kelvinToCelsius, kelvinToFahrenheit } from "../utils/temp";
 
-  const Weather = ({ weatherInfo }) => {
+   
+
+
+const wheaterIcons={
+  "01d": "/weather_images/Sun.png",
+  "01n": "/weather_images/luna3.png",
+  "03d": "/weather_images/Probablemente_nublado.png",
+  "03n": "/weather_images/Probablemente_nublado.png",
+  "04d": "/weather_images/Mayormente_nublado.png",
+  "04n": "/weather_images/Mayormente_nublado.png",
+  "09d": "/weather_images/Aguacero.png",
+  "09n": "/weather_images/Aguacero.png",
+  "10d": "/weather_images/Lluvia.png",
+  "10n": "/weather_images/Lluvia.png",
+  "11d": "/weather_images/Tormenta_electrica.png",
+  "11n": "/weather_images/Tormenta_electrica.png",
+  "13d": "/weather_images/Nieve.png",
+  "13n": "/weather_images/Nieve.png"
+  
+
+  
+}
+
+  const Weather = ({ weatherInfo, handleSubmit }) => {
  
     const [isCelsius, setIsCelsius] = useState(true)
     const [isDark, setIsDark] = useState(false)
@@ -23,21 +46,28 @@ const handleChangeTemp=() => {
        
       }, [isDark])
       
-    
+ 
 
 
   return (
     
     <section className="text-center grid gap-6 p-4 text-black">
      <div className="flex justify-center">
-     <input placeholder="Search City..." type="text" className="placeholder-[#ccb3fa] bg-white dark:text-white text-black shadow-md shadow-slate-700 font-medium px-3 py-2 no rounded-l-lg outline-none dark:bg-[#571dc2] sm:w-80" />
+     
+     <form onSubmit={handleSubmit}>
+    
 
-     <button className="bg-[#571dc2] dark:bg-white rounded-r-lg w-10 shadow-md shadow-slate-700 font-extrabold">
+     <input id="city" placeholder="Search City..." type="text" className="placeholder-[#ccb3fa] bg-white dark:text-white text-black shadow-md shadow-slate-700 font-medium px-3 py-2 no rounded-l-lg outline-none dark:bg-[#571dc2] sm:w-80" />
+     
+     
+     <button className="bg-[#571dc2] dark:bg-white rounded-r-lg w-10 shadow-md shadow-slate-700 font-extrabold h-10">
      {
      !isDark ? <i className='bx bx-search-alt-2 text-white'></i> : <i className='bx bx-search-alt-2 text-[#571dc2] dark:font-extrabold'></i>
      }
    
      </button>
+     </form>
+
       
      </div>
   
@@ -73,11 +103,12 @@ const handleChangeTemp=() => {
               ? kelvinToCelsius(weatherInfo?.main.temp)
               : kelvinToFahrenheit(weatherInfo?.main.temp)}</span>
 
-        <div className="pb-5 ">
+        <div className="pb-5 my-0 mx-auto">
           <img
-            src={`https://openweathermap.org/img/wn/${weatherInfo?.weather[0].icon}@4x.png`}
-            alt=""
-          />
+            src={wheaterIcons[weatherInfo?.weather[0].icon] }
+            alt=""/>
+            
+          
         </div>
       </article>
     {/*   {/Section bottom/} */}

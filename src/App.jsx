@@ -9,18 +9,67 @@ function App() {
 
 
   
-  const handleSubmit=(e) => {
+  const handleSubmit= (e) => {
     e.preventDefault()
     const city= e.target.city.value
-    const API_KEY = '44f1f57375cf9c084dc69a88bc046a61'
+    const KEY = '44f1f57375cf9c084dc69a88bc046a61'
 
     const URL_COUNTRY = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${KEY}`
 
 
-
     axios.get(URL_COUNTRY)
-    .then(({data})=> setWeatherInfo(data))
+    .then(({data})=> {
+      let newData = data;
+      newData.weatherImage = '';
+      if (data.weather[0].icon === '01n'){
+        newData.weatherImage = 'bg-Noche'
+      }
+      if (data.weather[0].main === 'Drizzle'){
+        newData.weatherImage = 'bg-Aguacero'
+        }
+      if (data.weather[0].main === 'Clouds'){
+        newData.weatherImage = 'bg-Pocas_Nubes'
+        }
+      if (data.weather[0].main === 'Snow'){
+        newData.weatherImage = 'bg-Nieve'
+        }
+      if (data.weather[0].main === 'Thunderstorm'){
+        newData.weatherImage = 'bg-Tormenta_electrica'
+        }
+      if (data.weather[0].main === 'Mist'){
+        newData.weatherImage = 'bg-Niebla'
+        }
+        if(data.weather[0].main === 'Fog'){
+          newData.weatherImage = 'bg-Niebla'
+        }
+        if(data.weather[0].main === 'Rain'){
+          newData.weatherImage = 'bg-Aguacero'
+        }
+       
+      setWeatherInfo(newData)
+      return newData;
+
+
+    })
+
+
+
+
+
+
+
+
+
+
+
+
+    
     .catch((error) => console.log(error))
+  
+  
+
+
+  
   }
 
 
@@ -42,8 +91,8 @@ function App() {
 
       let newData = data;
       newData.weatherImage = '';
-      if (data.weather[0].main === 'Clear'){
-        newData.weatherImage = 'bg-Soleado'
+      if (data.weather[0].icon === '01n'){
+        newData.weatherImage = 'bg-Noche'
       }
       if (data.weather[0].main === 'Drizzle'){
         newData.weatherImage = 'bg-Aguacero'
@@ -62,6 +111,9 @@ function App() {
         }
         if(data.weather[0].main === 'Fog'){
           newData.weatherImage = 'bg-Niebla'
+        }
+        if(data.weather[0].main === 'Rain'){
+          newData.weatherImage = 'bg-Aguacero'
         }
        
       setWeatherInfo(newData)
@@ -85,9 +137,12 @@ function App() {
 
      {
 
-      weatherInfo ?  <Weather weatherInfo={weatherInfo}/>
+      weatherInfo ?  <Weather weatherInfo={weatherInfo} handleSubmit={handleSubmit} />
       : <Loader/>
+
      }
+     
+     
     </main>
   )
 }
