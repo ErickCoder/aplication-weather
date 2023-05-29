@@ -15,6 +15,12 @@ export default {
           'Mayormente_Nublado': "url('/images_clima/Mayormente_nublado.jpg')",
           'Probablemente_Nublado': "url('/images_clima/Probablemente_nublado.jpg')",
           'Noche': "url('/images_clima/noche.jpg')",
+          'clear_SkyN': "url('/images_clima/Nube_luna.jpg')",
+          'Nublado_Dia': "url('/images_clima/Nublado1.jpg')",
+          'Nublado_Noche': "url('/images_clima/Nublado_Noche.jpg')",
+          'Soleado1': "url('/images_clima/Soleado1.jpg')",
+          'Lluvia_Dia': "url('/images_clima/Lluvia_Dia.jpg')",
+          'Lluvia_Noche': "url('/images_clima/Lluvia_noche.jpg')",
         },
         fontFamily:{
           "principal-font": ["Lato","sans"]
