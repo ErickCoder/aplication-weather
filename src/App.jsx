@@ -155,7 +155,7 @@ function App() {
         newData.weatherImage = 'bg-Nieve'
         }
       if (data.weather[0].main === 'Thunderstorm'){
-        newData.weatherImage = 'bg-Tormenta_electrica'
+        newData.weatherImage = 'bg-Tormenta'
         }
       if (data.weather[0].main === 'Mist'){
         newData.weatherImage = 'bg-Niebla'

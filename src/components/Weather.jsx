@@ -18,7 +18,7 @@ const wheaterIcons={
   "10d": "/weather_images/10_d.svg",
   "10n": "/weather_images/10_n.svg",
   "11d": "/weather_images/11_d.svg",
-  "11n": "/weather_images/11_n.svg",
+  "11n": "/weather_images/11_d.svg",
   "13d": "/weather_images/13_d.svg",
   "13n": "/weather_images/13_n.svg",
   "50d": "/weather_images/50_d.svg",
