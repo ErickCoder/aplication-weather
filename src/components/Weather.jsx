@@ -18,7 +18,10 @@ const wheaterIcons={
   "11d": "/weather_images/Tormenta_electrica.png",
   "11n": "/weather_images/Tormenta_electrica.png",
   "13d": "/weather_images/Nieve.png",
-  "13n": "/weather_images/Nieve.png"
+  "13n": "/weather_images/Nieve.png",
+  "50d": "/weather_images/fog.png",
+  "50n": "/weather_images/fog.png",
+
   
 
   
