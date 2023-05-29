@@ -81,7 +81,7 @@ function App() {
             if (data.weather[0].icon === '50n'){
               newData.weatherImage = 'bg-Niebla'
               }
-        
+              
       
        
       setWeatherInfo(newData)
