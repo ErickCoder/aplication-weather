@@ -776,29 +776,31 @@ body{
 p
 {
   
-  font-size: 70px;
-  padding-bottom: 490px;
+  font-size: 60px;
+  padding-top: 450px;
   font-family: 'Days One', sans-serif;
 
    
   background-image: linear-gradient(
     -225deg,
     #fff 0%,
-    #ffffffde 29%,
-    #f0c92e 67%,
+    #181616de 29%,
+    #131210 67%,
     #f8f8f8 100%
   );
   background-size: auto auto;
   background-clip: border-box;
   background-size: 200% auto;
   color: #fff;
+ 
   background-clip: text;
   
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: textclip 2s linear infinite;
   display: inline-block;
-      font-size: 40px;
+      font-size: 37px;
+      text-shadow: 2px 2px  #f0c92e;
 }
 
 @keyframes textclip {
