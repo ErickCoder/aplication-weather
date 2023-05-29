@@ -37,7 +37,7 @@ function App() {
         newData.weatherImage = 'bg-Nublado_Dia'
       }
       if (data.weather[0].icon === '03n'){
-        newData.weatherImage = 'bg- Nublado_Noche'
+        newData.weatherImage = 'bg-Nublado_Noche'
       }
       if (data.weather[0].icon === '04d'){
         newData.weatherImage = 'bg-Nublado_Dia'
@@ -142,7 +142,7 @@ function App() {
         newData.weatherImage = 'bg-Nublado_Dia'
       }
       if (data.weather[0].icon === '03n'){
-        newData.weatherImage = 'bg- Nublado_Noche'
+        newData.weatherImage = 'bg-Nublado_Noche'
       }
 
       if (data.weather[0].main === 'Drizzle'){
