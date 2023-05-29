@@ -168,7 +168,8 @@ function App() {
         }
         if(data.weather[0].main === 'Light Rain'){
           newData.weatherImage = 'bg-Aguacero'
-        }
+        } 
+         
       
       setWeatherInfo(newData)
       return newData;
